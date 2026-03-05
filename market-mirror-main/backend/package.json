@@ -1,0 +1,27 @@
+{
+  "name": "market-mirror-backend",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "dev": "nodemon server.cjs",
+    "check": "node --check server.cjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.18.0",
+    "multer": "^2.0.2",
+    "stripe": "^18.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

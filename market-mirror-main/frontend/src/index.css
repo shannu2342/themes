@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 13% 18%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom marketplace colors - Modern Blue System */
+    --header-bg: 220 13% 18%;
+    --header-foreground: 0 0% 100%;
+    --category-bg: 217 91% 98%;
+    --highlight-blue: 217 91% 60%;
+    --highlight-blue-hover: 217 91% 55%;
+    --highlight-blue-light: 217 91% 98%;
+    --highlight-yellow: 45 93% 58%;
+    --star-gold: 45 93% 47%;
+    --link-blue: 217 91% 60%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 13% 10%;
+    --foreground: 210 40% 98%;
+    --card: 220 13% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 13% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217 91% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 217 91% 60%;
+    
+    /* Dark mode custom colors */
+    --category-bg: 217 91% 5%;
+    --highlight-blue: 217 91% 60%;
+    --highlight-blue-hover: 217 91% 65%;
+    --highlight-blue-light: 217 91% 10%;
+    --link-blue: 217 91% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-header-foreground/80 hover:text-header-foreground transition-colors text-sm font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-primary font-semibold;
+  }
+
+  .category-link {
+    @apply text-link-blue hover:underline text-sm font-medium;
+  }
+
+  .product-card {
+    @apply bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-border;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2.5 rounded font-semibold transition-colors;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-5 py-2 rounded font-semibold transition-colors;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3 rounded-l-md border border-border focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-foreground;
+  }
+
+  .category-pill {
+    @apply px-5 py-2.5 rounded-md border-2 text-sm font-medium transition-all cursor-pointer;
+  }
+
+  .category-pill-active {
+    @apply border-link-blue bg-link-blue/10 text-link-blue;
+  }
+
+  .category-pill-inactive {
+    @apply border-border bg-background text-foreground hover:border-link-blue/50;
+  }
+
+  /* Modern Responsive Utilities */
+  .container-responsive {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-modern {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-primary-modern {
+    @apply btn-modern bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+  
+  .btn-secondary-modern {
+    @apply btn-modern bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+  
+  .card-modern {
+    @apply bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+  }
+  
+  .section-responsive {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent;
+  }
+  
+  /* Mobile-first improvements */
+  .mobile-menu-overlay {
+    @apply fixed inset-0 z-50 bg-black/50 lg:hidden;
+  }
+  
+  .mobile-menu-panel {
+    @apply bg-background w-80 h-full shadow-xl overflow-y-auto;
+  }
+}
